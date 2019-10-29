@@ -1,14 +1,5 @@
 FROM ubuntu:xenial
 
-LABEL \
-  maintainer="Peter Evans <mail@peterevans.dev>" \
-  org.opencontainers.image.title="osrm-backend" \
-  org.opencontainers.image.description="Docker image for the Open Source Routing Machine (OSRM) osrm-backend." \
-  org.opencontainers.image.authors="Peter Evans <mail@peterevans.dev>" \
-  org.opencontainers.image.url="https://github.com/peter-evans/osrm-backend-docker" \
-  org.opencontainers.image.vendor="https://peterevans.dev" \
-  org.opencontainers.image.licenses="MIT"
-
 ENV OSRM_VERSION 5.22.0
 
 # Let the container know that there is no TTY
@@ -62,4 +53,4 @@ COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 5000
+EXPOSE 5000 5001 5002
